@@ -5,3 +5,8 @@ FSPM(Fast and Secure Package-Manager) is a package manager that aims to be fast 
 *Made in ASH!
 
 *Lightweight!
+
+*Include one package to test
+
+
+*Mytux-term is licensed under MPL2.0(Mozzila Public License)*
