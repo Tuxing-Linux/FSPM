@@ -1,0 +1,53 @@
+#!/bin/sh
+
+help ()
+
+{
+  printf "fspm- Fast and Secure Package Manager\n\n"
+  printf "install\n"
+  printf "remove\n"
+  printf "upgrade\n"
+}
+
+if [ "$#" -lt 1 ]; then
+	help
+	exit 1
+fi
+
+command="$1"
+
+if  [ "$command" = "install" ]; then
+
+	if [ "$#" -lt 2 ]; then 
+		printf "Please specify the name of the package\n"
+		printf "Example: fspm install package name\n"
+	exit 1
+	fi
+
+	pack="$2"
+
+	printf "\n Received package name\n"
+	
+#--- Instalation logic---
+
+	pack_file="/tmp/${pack}.fsp"
+	
+	tar -zxf $pack_file -C /
+	
+	printf "\n[FSPM] Package sucefull instaled\n"
+
+
+
+
+
+
+elif [ "$command" = "help" ]; then
+	help
+
+else 
+	printf "Unknown command"
+	help
+	exit 1
+fi
+
+exit 0
